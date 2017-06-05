@@ -1,4 +1,4 @@
-/autoloaded
-/plugged
-/session
+autoload/
+plugged/
+session/
 .DS_Store

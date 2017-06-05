@@ -47,6 +47,10 @@ Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
+Plug 'valloric/youcompleteme'
+Plug 'tpope/vim-sensible'
+Plug 'kien/ctrlp.vim'
+
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -75,7 +79,9 @@ endif
 Plug 'honza/vim-snippets'
 
 "" Color
-Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
+"Plug 'tomasr/molokai'
 
 "*****************************************************************************
 "" Custom bundles
@@ -109,22 +115,13 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
+" ember
+"" ember Bundle
+Plug 'dsawardekar/ember.vim'
+Plug 'joukevandermaas/vim-ember-hbs'
 
 "*****************************************************************************
 "*****************************************************************************
-" youcompleteme
-Plug 'valloric/youcompleteme'
-Plug 'tpope/vim-sensible'
-Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/syntastic'
-Plug 'kien/ctrlp.vim'
-Plug 'dsawardekar/ember.vim'
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
-Plug 'morhetz/gruvbox'
 
 "" Include user's extra bundle
 if filereadable(expand("~/.config/nvim/local_bundles.vim"))
@@ -135,13 +132,6 @@ call plug#end()
 
 " Required:
 filetype plugin indent on
-
-map <C-n> :NERDTreeToggle<CR>
-
-" Theme 
-set termguicolors
-set background=dark 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 "*****************************************************************************
 "" Basic Setup
@@ -228,7 +218,10 @@ else
   
 endif
 
-
+""" gruvbox theme 
+set termguicolors
+set background=dark 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
@@ -352,6 +345,8 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+
+map <C-n> :NERDTreeToggle<CR>
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
